@@ -1,6 +1,10 @@
 const { gql } = require('apollo-server')
 
 const typedefs = gql`
+  type CommandSuccess {
+    success: Boolean!
+  }
+
   type Product {
     name: String!
     price: Float!
@@ -16,8 +20,8 @@ const typedefs = gql`
   }
 
   type Mutation {
-    addProduct(input: AddProductInput): Boolean
-    seedProducts: Boolean
+    addProduct(input: AddProductInput): CommandSuccess!
+    seedProducts: Boolean!
   }
 `
 

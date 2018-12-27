@@ -20,4 +20,6 @@ module.exports = function addProduct({ name, price }, context) {
       price,
     },
   })
+
+  return { success: true }
 }
